@@ -1,0 +1,18 @@
+{
+  "name": "angular-table-pagination",
+  "version": "1.0.0",
+  "description": "makes table pagination for the dynamic table",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mmitis/angular-table-pagination.git"
+  },
+  "keywords": [
+    "test",
+    "command:"
+  ],
+  "author": "MMITIS",
+  "license": "ISC"
+}

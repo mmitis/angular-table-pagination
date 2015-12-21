@@ -1,0 +1,38 @@
+<nav>
+    <ul class="pull-left pagination" ng-show="settings.visiblity_paginate == true">
+        <li ng-click="pageFirst()">
+            <a aria-label="Previous">
+                <span aria-hidden="true">&laquo;&laquo;</span>
+            </a>
+        </li>
+        <li ng-click="pagePrev()">
+            <a aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li ng-click="changePage(page)" ng-repeat="page in settings.pages_arr"
+            ng-class="{active: settings.currentPage == page}">
+            <a>{{page+1}}</a>
+        </li>
+        <li ng-click="pageNext()">
+            <a aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+        <li ng-click="pageLast()">
+            <a aria-label="Next">
+                <span aria-hidden="true">&raquo;&raquo;</span>
+            </a>
+        </li>
+    </ul>
+    <div class="pull-left pagination-padded">
+        {{'Pages' | translate}} <input type="number" ng-blur="changePageByInputOutBlur()" ng-model="settings.showPage"
+                                       class='paginate-change form-control' min="1" max="{{settings.pages}}"
+                                       ng-change="changePageByInput()"> / {{settings.pages}}
+    </div>
+    <ul class="pagination pull-right">
+        <li ng-repeat="number in settings.num_rows" ng-class="{active: metrics.limit == number}">
+            <a ng-click="changeLimit(number)">{{number}}</a>
+        </li>
+    </ul>
+</nav>
